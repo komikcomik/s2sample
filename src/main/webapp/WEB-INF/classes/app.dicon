@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+	"http://www.seasar.org/dtd/components24.dtd">
+<components>
+
+<!--
+  <include path="convention.dicon"/>
+
+
+  <include path="teedaExtension.dicon"/>
+  <include path="dao.dicon"/>
+  <include path="dxo.dicon"/>
+  <include path="j2ee.dicon"/>
+-->
+    <include path="aop.dicon"/>
+    <include path="app_aop.dicon"/>
+  	<component name="messageTarget"
+		class="s2.sample.s2comtainer.helloworld.DefaultMessageTarget"
+		instance="singleton">
+	</component>
+
+	<component name="messageTarget2"
+		class="s2.sample.s2comtainer.helloworld.SeasarMessageTarget"
+		instance="singleton">
+	</component>
+
+	<component name="messageProvider"
+		class="s2.sample.s2comtainer.helloworld.HelloMessageProvider"
+		instance="singleton">
+		<aspect pointcut="getMessage">aop.traceInterceptor</aspect>
+	</component>
+</components>
